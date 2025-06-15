@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deore Rohit | Cybersecurity Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #00f7ff;
+            --secondary: #0cebeb;
+            --dark: #0a0a0f;
+            --card: #111827;
+            --light: #f1f5f9;
+            --accent: #8B5CF6;
+            --terminal: #0f172a;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: 
+                radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%),
+                radial-gradient(circle at top left, rgba(29, 78, 216, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at top right, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at bottom left, rgba(101, 163, 13, 0.1) 0%, transparent 50%);
+            color: #e5e7eb;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            position: relative;
+        }
+        
+        /* Dragon watermark */
+        .dragon-bg {
+            position: fixed;
+            bottom: -100px;
+            right: -150px;
+            opacity: 0.05;
+            font-size: 40rem;
+            z-index: -1;
+            transform: rotate(25deg);
+            pointer-events: none;
+            color: #00f7ff;
+        }
+        
+        /* Galaxy stars effect */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            pointer-events: none;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration, 4s) infinite ease-in-out;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+        }
+        
+        .hero-gradient {
+            background: radial-gradient(circle at 10% 20%, rgba(12, 235, 235, 0.15) 0%, rgba(0, 0, 0, 0) 50%);
+        }
+        
+        .section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .terminal-card {
+            background: linear-gradient(145deg, var(--card), var(--dark));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .terminal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 247, 255, 0.2);
+        }
+        
+        .terminal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+            transform: translateY(-5px);
+        }
+        
+        .skill-badge {
+            background-color: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-badge:hover {
+            background-color: rgba(16, 185, 129, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 7px;
+            height: 100%;
+            width: 2px;
+            background-color: var(--primary);
+        }
+        
+        .cyber-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 247, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 247, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .nav-link {
+            position: relative;
+            padding-bottom: 5px;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .section-divider {
+            position: relative;
+            padding-bottom: 80px;
+        }
+        
+        .section-divider::after {
+            content: '';
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        .terminal-text {
+            font-family: 'Courier New', monospace;
+        }
+        
+        .terminal-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 16px;
+            background: var(--primary);
+            margin-left: 4px;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .terminal-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+        
+        .terminal-header {
+            background: rgba(17, 24, 39, 0.8);
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .terminal-content {
+            padding: 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .terminal-line {
+            margin-bottom: 8px;
+        }
+        
+        .social-link {
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px);
+            color: var(--primary);
+        }
+        
+        .connect-card {
+            background: rgba(17, 24, 39, 0.5);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .connect-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 247, 255, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .connect-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* New styles from the content update */
+        .summary-points {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .summary-points li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .connect-icon {
+            font-size: 2.5rem;
+            transition: all 0.4s ease;
+        }
+        
+        .connect-icon:hover {
+            transform: scale(1.2) rotate(5deg);
+            color: var(--primary);
+            text-shadow: 0 0 15px rgba(0, 247, 255, 0.7);
+        }
+        
+        .pillar-card {
+            background: rgba(17, 24, 39, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 3px solid var(--primary);
+        }
+        
+        .cert-card {
+            background: rgba(17, 24, 39, 0.5);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 247, 255, 0.2);
+            border-color: var(--primary);
+        }
+        
+        /* Improved terminal look for certifications */
+        .cert-terminal {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cert-terminal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        /* Animation for contact icons */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite ease-in-out;
+        }
+        
+        /* NEW STYLES FOR IMPROVEMENTS */
+        
+        /* Name gradient */
+        .name-gradient {
+            background: linear-gradient(90deg, #4285F4, #9B72CB, #EA4335);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Offensive logo */
+        .offensive-logo {
+            text-shadow: 0 0 15px rgba(220, 38, 38, 0.7);
+        }
+        
+        /* Quote terminal */
+        .quote-terminal {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            max-width: 700px;
+            margin: 2rem auto;
+            position: relative;
+        }
+        
+        .quote-terminal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #4285F4, #9B72CB, #EA4335);
+        }
+        
+        /* Contact icons */
+        .contact-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            background: rgba(17, 24, 39, 0.3);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-icon:hover {
+            transform: translateY(-8px);
+            background: rgba(17, 24, 39, 0.5);
+            box-shadow: 0 10px 25px rgba(0, 247, 255, 0.2);
+            border: 1px solid var(--primary);
+        }
+        
+        .contact-icon i {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+        
+        .contact-icon span {
+            font-size: 0.85rem;
+            color: var(--light);
+        }
+        
+        /* Highlighted text */
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="relative">
+    <!-- Linux Dragon Watermark -->
+    <div class="dragon-bg">
+        <i class="fa-brands fa-linux"></i>
+    </div>
+    
+    <!-- Galaxy Stars -->
+    <div class="stars" id="stars-container"></div>
+    
+    <!-- Cyber Grid Background -->
+    <div class="cyber-grid fixed inset-0"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dark/90 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-primary offensive-logo">
+                <i class="fas fa-crosshairs text-accent"></i>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-gray-300 hover:text-white">Home</a>
+                <a href="#about" class="nav-link text-gray-300 hover:text-white">About</a>
+                <a href="#skills" class="nav-link text-gray-300 hover:text-white">Skills</a>
+                <a href="#certifications" class="nav-link text-gray-300 hover:text-white">Certifications</a>
+                <a href="#projects" class="nav-link text-gray-300 hover:text-white">Projects</a>
+                <a href="#education" class="nav-link text-gray-300 hover:text-white">Education</a>
+                <a href="#contact" class="nav-link text-gray-300 hover:text-white">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-light focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-card py-4 px-4">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="nav-link text-gray-300 hover:text-white">Home</a>
+                <a href="#about" class="nav-link text-gray-300 hover:text-white">About</a>
+                <a href="#skills" class="nav-link text-gray-300 hover:text-white">Skills</a>
+                <a href="#certifications" class="nav-link text-gray-300 hover:text-white">Certifications</a>
+                <a href="#projects" class="nav-link text-gray-300 hover:text-white">Projects</a>
+                <a href="#education" class="nav-link text-gray-300 hover:text-white">Education</a>
+                <a href="#contact" class="nav-link text-gray-300 hover:text-white">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden pt-16">
+        <div class="absolute inset-0 hero-gradient z-0"></div>
+        <div class="container mx-auto px-4 py-20 flex flex-col items-center text-center">
+            <div class="mb-8">
+                <h1 class="text-6xl md:text-8xl font-bold mb-4">
+                    <span class="name-gradient">ROHIT DEORE</span>
+                </h1>
+                <div class="text-xl md:text-2xl font-bold mb-10 text-gray-300 mt-8">
+                    Cybersecurity Analyst | Ethical Hacker | Network Security Specialist
+                </div>
+                
+                <div class="quote-terminal">
+                    <div class="terminal-text inline-block">
+                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed inline">
+                            "Tools don't make a hacker. Curiosity, discipline, and purpose do."
+                        </p>
+                        <span class="terminal-cursor"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-primary text-2xl">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-to-b from-dark/90 to-card/90">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 section-divider">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Cybersecurity analyst specializing in penetration testing and ethical hacking
+                </p>
+            </div>
+            
+            <div class="terminal-card p-8 rounded-xl max-w-4xl mx-auto">
+                <div class="text-gray-300 mb-8">
+                    <p class="mb-4">
+                        I am an aspiring <span class="highlight">cybersecurity analyst</span> with hands-on experience in <span class="highlight">network security</span> and <span class="highlight">penetration testing</span>. Currently pursuing my Diploma in Cybersecurity at <span class="highlight">Craw Security, Delhi</span>, I combine technical knowledge with a creative problem-solving approach. Continuously updating my skills with the latest threats and security technologies, I am passionate about safeguarding digital assets.
+                    </p>
+                    <p>
+                        My journey in cybersecurity began with a fascination for understanding how systems can be compromised and protected. This curiosity drives me to explore new vulnerabilities and develop innovative defense strategies.
+                    </p>
+                </div>
+                
+                <div class="pillar-card">
+                    <h4 class="text-xl font-bold text-primary mb-2">Core Focus</h4>
+                    <p class="text-gray-300">
+                        Network security, vulnerability assessment, penetration testing, cyber crime investigation, digital forensics, and implementing robust security solutions.
+                    </p>
+                </div>
+                
+                <div class="pillar-card">
+                    <h4 class="text-xl font-bold text-primary mb-2">Mission</h4>
+                    <p class="text-gray-300">
+                        To become a certified ethical hacker and protect digital infrastructures by identifying security weaknesses and developing effective defense strategies.
+                    </p>
+                </div>
+                
+                <div class="pillar-card">
+                    <h4 class="text-xl font-bold text-primary mb-2">Vision</h4>
+                    <p class="text-gray-300">
+                        To leverage my curiosity and technical skills to become an innovator in cybersecurity, developing new techniques to combat evolving threats and contribute to a safer digital world.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 section-divider">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical Skills</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    My technical skills and knowledge areas
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Security Tools -->
+                <div class="terminal-card p-6 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-shield-halved text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Security Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge px-4 py-2 rounded-full">Metasploit</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">Nmap</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">Wireshark</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">Burp Suite</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">Aircrack-ng</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">John the Ripper</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">Hydra</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">Kali Linux</span>
+                    </div>
+                </div>
+                
+                <!-- Programming Languages -->
+                <div class="terminal-card p-6 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-code text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Programming Languages</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge px-4 py-2 rounded-full">Python</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">Bash Scripting</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">Java</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">C</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">C++</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">HTML/CSS</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">JavaScript</span>
+                    </div>
+                </div>
+                
+                <!-- Networking & Protocols -->
+                <div class="terminal-card p-6 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-network-wired text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Networking & Protocols</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge px-4 py-2 rounded-full">TCP/IP</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">DNS</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">HTTP/HTTPS</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">VLAN</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">VPN</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">Firewalls</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">IDS/IPS</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">Packet Tracer</span>
+                    </div>
+                </div>
+                
+                <!-- Security Concepts -->
+                <div class="terminal-card p-6 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-brain text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Security Concepts</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge px-4 py-2 rounded-full">Penetration Testing</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">Vulnerability Assessment</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">OWASP Top 10</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">Cryptography</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">Digital Forensics</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">Incident Response</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">Threat Analysis</span>
+                    </div>
+                </div>
+                
+                <!-- Operating Systems -->
+                <div class="terminal-card p-6 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-desktop text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Operating Systems</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge px-4 py-2 rounded-full">Kali Linux</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">Windows</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">Ubuntu</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">Parrot OS</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">CentOS</span>
+                    </div>
+                </div>
+                
+                <!-- Web Technologies -->
+                <div class="terminal-card p-6 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-globe text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Web Technologies</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge px-4 py-2 rounded-full">Web App Security</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">XSS</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">SQL Injection</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">CSRF</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">Session Hijacking</span>
+                        <span class="skill-badge px-4 py-2 rounded-full">API Security</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-gradient-to-b from-card/90 to-dark/90">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 section-divider">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Certifications</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Validating my cybersecurity expertise
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="cert-terminal">
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-shield-alt text-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold">TryHackMe</h4>
+                            <p class="text-gray-400">Top 10% | Completed 60+ rooms including Pre-Security, Complete Beginner, and Cyber Defense paths</p>
+                            <div class="mt-3 text-primary text-sm">2023-2025</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cert-terminal">
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-user-secret text-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold">ZSecurity Ethical Hacking</h4>
+                            <p class="text-gray-400">Advanced penetration testing techniques and methodologies</p>
+                            <div class="mt-3 text-primary text-sm">2024</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cert-terminal">
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-certificate text-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold">ISC2 Certified in Cybersecurity (CC)</h4>
+                            <p class="text-gray-400">Foundational cybersecurity knowledge and best practices</p>
+                            <div class="mt-3 text-primary text-sm">2024</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cert-terminal">
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-network-wired text-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold">CCNA Ethical Hacking</h4>
+                            <p class="text-gray-400">Network security specialization and ethical hacking principles</p>
+                            <div class="mt-3 text-primary text-sm">2023</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 section-divider">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Academic Projects</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Security projects and penetration testing engagements
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="terminal-card glow-hover p-6 rounded-xl transition-all duration-300">
+                    <div class="mb-4 flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl font-bold">Network Traffic Analysis</h3>
+                            <div class="text-primary text-sm">Security Research</div>
+                        </div>
+                        <div class="bg-primary/10 p-2 rounded-lg">
+                            <i class="fas fa-network-wired text-primary"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Captured and analyzed live network packets using Wireshark and TCPdump. 
+                        Practiced filtering, dissecting, and interpreting network logs for forensic 
+                        and monitoring use cases.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-dark text-xs px-3 py-1 rounded-full">Wireshark</span>
+                        <span class="bg-dark text-xs px-3 py-1 rounded-full">TCPdump</span>
+                        <span class="bg-dark text-xs px-3 py-1 rounded-full">Traffic Analysis</span>
+                    </div>
+                    <div class="text-xs text-gray-500">2024</div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="terminal-card glow-hover p-6 rounded-xl transition-all duration-300">
+                    <div class="mb-4 flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl font-bold">Penetration Testing</h3>
+                            <div class="text-primary text-sm">Vulnerability Assessment</div>
+                        </div>
+                        <div class="bg-primary/10 p-2 rounded-lg">
+                            <i class="fas fa-shield-alt text-primary"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Executed vulnerability scans using Nmap for network reconnaissance. 
+                        Used Metasploitable to simulate real-world attacks and gain hands-on 
+                        experience in exploiting security flaws.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-dark text-xs px-3 py-1 rounded-full">Metasploit</span>
+                        <span class="bg-dark text-xs px-3 py-1 rounded-full">Nmap</span>
+                        <span class="bg-dark text-xs px-3 py-1 rounded-full">Vulnerability</span>
+                    </div>
+                    <div class="text-xs text-gray-500">2024</div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="terminal-card glow-hover p-6 rounded-xl transition-all duration-300">
+                    <div class="mb-4 flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl font-bold">Web Security Testing</h3>
+                            <div class="text-primary text-sm">Application Security</div>
+                        </div>
+                        <div class="bg-primary/10 p-2 rounded-lg">
+                            <i class="fas fa-lock text-primary"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Used Burp Suite to intercept and manipulate HTTP requests. Identified and 
+                        experimented with basic web vulnerabilities such as input tampering, 
+                        cookie manipulation, XSS and SQLi basics.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-dark text-xs px-3 py-1 rounded-full">Burpsuite</span>
+                        <span class="bg-dark text-xs px-3 py-1 rounded-full">XSS</span>
+                        <span class="bg-dark text-xs px-3 py-1 rounded-full">SQLi</span>
+                    </div>
+                    <div class="text-xs text-gray-500">2024</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gradient-to-b from-card/90 to-dark/90">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 section-divider">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Education & Training</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    My academic background and professional certifications
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="relative">
+                    <!-- Education Timeline -->
+                    <div class="space-y-12">
+                        <!-- Item 1 -->
+                        <div class="flex">
+                            <div class="flex-shrink-0 mr-6">
+                                <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                                    <i class="fas fa-graduation-cap text-primary text-2xl"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow timeline-item pl-8 relative pb-12">
+                                <div class="terminal-card p-6 rounded-xl">
+                                    <div class="flex justify-between flex-wrap mb-2">
+                                        <h3 class="text-xl font-bold">Diploma in Cybersecurity</h3>
+                                        <span class="text-primary font-bold">2025 - Present</span>
+                                    </div>
+                                    <div class="text-primary mb-4">Craw Security, Delhi</div>
+                                    <p class="text-gray-300">
+                                        Advanced training in ethical hacking, penetration testing, 
+                                        digital forensics, and security operations.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 2 -->
+                        <div class="flex">
+                            <div class="flex-shrink-0 mr-6">
+                                <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                                    <i class="fas fa-university text-primary text-2xl"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow timeline-item pl-8 relative pb-12">
+                                <div class="terminal-card p-6 rounded-xl">
+                                    <div class="flex justify-between flex-wrap mb-2">
+                                        <h3 class="text-xl font-bold">Bachelor of Computer Science</h3>
+                                        <span class="text-primary font-bold">2021 - 2024</span>
+                                    </div>
+                                    <div class="text-primary mb-4">R.C. Patel Arts, Commerce & Science College, Shirpur</div>
+                                    <p class="text-gray-300">
+                                        Comprehensive study of computer systems, algorithms, 
+                                        data structures, and software development.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 3 -->
+                        <div class="flex">
+                            <div class="flex-shrink-0 mr-6">
+                                <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                                    <i class="fas fa-book text-primary text-2xl"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow pl-8">
+                                <div class="terminal-card p-6 rounded-xl">
+                                    <div class="flex justify-between flex-wrap mb-2">
+                                        <h3 class="text-xl font-bold">Higher Secondary (HSC)</h3>
+                                        <span class="text-primary font-bold">2019 - 2021</span>
+                                    </div>
+                                    <div class="text-primary mb-4">R.C. Patel Junior College, Shirpur</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 section-divider">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Connect With Me</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Let's secure the digital world together
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-wrap justify-center gap-6">
+                    <!-- Email -->
+                    <a href="mailto:deorerohit0101@gmail.com" class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                    
+                    <!-- GitHub -->
+                    <a href="https://github.com/deorerohit555" target="_blank" class="contact-icon">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/deorerohit0101" target="_blank" class="contact-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    
+                    <!-- TryHackMe -->
+                    <a href="https://tryhackme.com/p/deore1001" target="_blank" class="contact-icon">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>TryHackMe</span>
+                    </a>
+                    
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/deore.1001/" target="_blank" class="contact-icon">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <div class="flex justify-center mb-6">
+                    <a href="#" class="text-xl font-bold text-primary">
+                        <i class="fas fa-crosshairs text-accent mr-2"></i>
+                        <span class="text-primary">Rohit Deore</span>
+                    </a>
+                </div>
+                
+                <div class="text-gray-500 text-sm">
+                    &copy; 2025 Deore Rohit. All rights reserved. Crafted with <i class="fas fa-heart text-red-500"></i> for security.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Create stars for galaxy background
+        const starsContainer = document.getElementById('stars-container');
+        const starCount = 150;
+        
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            
+            // Random position
+            const top = Math.random() * 100;
+            const left = Math.random() * 100;
+            
+            // Random size
+            const size = Math.random() * 3;
+            
+            // Random animation duration
+            const duration = 2 + Math.random() * 8;
+            
+            star.style.top = `${top}%`;
+            star.style.left = `${left}%`;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.setProperty('--duration', `${duration}s`);
+            
+            starsContainer.appendChild(star);
+        }
+        
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Scroll reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections
+        document.querySelectorAll('.section').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Sticky navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
