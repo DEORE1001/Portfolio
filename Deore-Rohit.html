@@ -326,25 +326,34 @@
                 
                 <!-- TryHackMe Live Badge -->
    <!-- NEW SECTION: TryHackMe Live Profile -->
-    <section id="thm-profile" class="py-16 bg-gradient-to-b from-dark/80 to-card/80 section">
-        <div class="container mx-auto px-4 text-center">
-            <div class="mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">TryHackMe Live Profile</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">
-                    Track my progress and achievements on TryHackMe
-                </p>
+   <!-- TryHackMe Live Profile Section -->
+<section id="thm-profile" class="py-16 bg-gradient-to-b from-dark/80 to-card/80 section">
+    <div class="container mx-auto px-4 text-center">
+        <div class="mb-12 section-divider">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">TryHackMe Live Profile</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+                Real-time tracking of my cybersecurity training progress
+            </p>
+        </div>
+        
+        <div class="terminal-card glow-hover p-6 rounded-xl max-w-2xl mx-auto">
+            <div class="flex justify-center bg-terminal/90 p-4 rounded-lg">
+                <iframe 
+                    src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1213297" 
+                    style="border:none; width:100%; min-height:200px;"
+                    class="rounded-lg shadow-lg"
+                    title="TryHackMe Profile Badge">
+                </iframe>
             </div>
-            <div class="flex justify-center">
+            <div class="mt-6">
                 <a href="https://tryhackme.com/p/deore1001" target="_blank" 
-                   class="inline-block bg-card/50 backdrop-blur-md border border-primary/30 rounded-xl p-6 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 transform hover:-translate-y-1"
-                   aria-label="TryHackMe Profile">
-                    <img src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1213297" 
-                         alt="TryHackMe Badge" 
-                         class="rounded-lg w-full max-w-xs md:max-w-sm">
+                   class="inline-block bg-primary/10 hover:bg-primary/20 border border-primary/30 text-primary px-6 py-3 rounded-full transition-all duration-300">
+                   View Full Profile <i class="fas fa-external-link-alt ml-2"></i>
                 </a>
             </div>
         </div>
-    </section>>
+    </div>
+</section>
 
     <!-- Projects Section -->
     <section id="projects" class="py-20 section">
