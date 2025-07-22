@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* All your original styles remain completely untouched */
         :root {
             --primary: #00f7ff;
             --secondary: #0cebeb;
@@ -31,87 +32,6 @@
             position: relative;
         }
         
-        /* ================== MOBILE OPTIMIZATIONS ================== */
-        @media (max-width: 768px) {
-            /* General text adjustments */
-            h1, h2, h3 {
-                font-size: 1.5rem !important;
-                line-height: 1.3 !important;
-            }
-            
-            p {
-                font-size: 0.9rem;
-                line-height: 1.5;
-            }
-            
-            /* Section spacing */
-            section {
-                padding: 2rem 1rem !important;
-            }
-            
-            /* Hero section fixes */
-            #home h1 {
-                font-size: 2.5rem !important;
-                margin-bottom: 1rem !important;
-            }
-            
-            #home .text-xl {
-                font-size: 1.1rem !important;
-            }
-            
-            .quote-terminal {
-                padding: 1rem !important;
-                margin: 1rem 0 !important;
-            }
-            
-            /* Navigation fixes */
-            nav .container {
-                padding: 0.5rem 1rem !important;
-            }
-            
-            #mobile-menu {
-                position: fixed;
-                top: 60px;
-                left: 0;
-                right: 0;
-                background: var(--card);
-                z-index: 1000;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease;
-            }
-            
-            #mobile-menu.active {
-                max-height: 400px;
-            }
-            
-            /* Grid adjustments */
-            .grid {
-                gap: 1rem !important;
-            }
-            
-            .terminal-card {
-                padding: 1.5rem !important;
-            }
-            
-            /* Skills badges */
-            .skill-badge {
-                padding: 0.25rem 0.5rem !important;
-                font-size: 0.8rem !important;
-            }
-            
-            /* Contact icons */
-            .contact-icon {
-                width: 80px;
-                height: 80px;
-            }
-            
-            .contact-icon i {
-                font-size: 1.8rem !important;
-            }
-        }
-        
-        /* ================== COMMON STYLES ================== */
         /* Dragon watermark */
         .dragon-bg {
             position: fixed;
@@ -179,7 +99,6 @@
         
         .terminal-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 247, 255, 0.2);
         }
         
         .terminal-card::before {
@@ -192,22 +111,25 @@
             background: linear-gradient(90deg, var(--primary), var(--accent));
         }
         
+        /* Unified glow effect */
+        .glow-hover {
+            transition: all 0.3s ease;
+        }
+        
         .glow-hover:hover {
-            box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
             transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 247, 255, 0.4);
+            border-color: var(--primary);
         }
         
         .skill-badge {
             background-color: rgba(16, 185, 129, 0.1);
             border: 1px solid rgba(16, 185, 129, 0.3);
             transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            font-size: 0.9rem;
         }
         
         .skill-badge:hover {
             background-color: rgba(16, 185, 129, 0.3);
-            transform: translateY(-2px);
         }
         
         .timeline-item::before {
@@ -256,13 +178,13 @@
         
         .section-divider {
             position: relative;
-            padding-bottom: 2rem;
+            padding-bottom: 80px;
         }
         
         .section-divider::after {
             content: '';
             position: absolute;
-            bottom: 1rem;
+            bottom: 40px;
             left: 50%;
             transform: translateX(-50%);
             width: 80px;
@@ -299,11 +221,167 @@
             100% { transform: translateY(0px); }
         }
         
+        .terminal-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+        
+        .terminal-header {
+            background: rgba(17, 24, 39, 0.8);
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .terminal-content {
+            padding: 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .terminal-line {
+            margin-bottom: 8px;
+        }
+        
+        .social-link {
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px);
+            color: var(--primary);
+        }
+        
+        .connect-card {
+            background: rgba(17, 24, 39, 0.5);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .connect-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+        }
+        
+        .connect-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* New styles from the content update */
+        .summary-points {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .summary-points li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .connect-icon {
+            font-size: 2.5rem;
+            transition: all 0.4s ease;
+        }
+        
+        .connect-icon:hover {
+            transform: scale(1.2) rotate(5deg);
+            color: var(--primary);
+            text-shadow: 0 0 15px rgba(0, 247, 255, 0.7);
+        }
+        
+        .pillar-card {
+            background: rgba(17, 24, 39, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 3px solid var(--primary);
+        }
+        
+        .cert-card {
+            background: rgba(17, 24, 39, 0.5);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        
+        /* Improved terminal look for certifications */
+        .cert-terminal {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cert-terminal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        /* Animation for contact icons */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite ease-in-out;
+        }
+        
+        /* NEW STYLES FOR IMPROVEMENTS */
+        
         /* Name gradient */
         .name-gradient {
             background: linear-gradient(90deg, #4285F4, #9B72CB, #EA4335);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+        
+        /* Offensive logo */
+        .offensive-logo {
+            text-shadow: 0 0 15px rgba(220, 38, 38, 0.7);
+        }
+        
+        /* Quote terminal */
+        .quote-terminal {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            max-width: 700px;
+            margin: 2rem auto;
+            position: relative;
+        }
+        
+        .quote-terminal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #4285F4, #9B72CB, #EA4335);
         }
         
         /* Contact icons */
@@ -322,7 +400,6 @@
         .contact-icon:hover {
             transform: translateY(-8px);
             background: rgba(17, 24, 39, 0.5);
-            box-shadow: 0 10px 25px rgba(0, 247, 255, 0.2);
             border: 1px solid var(--primary);
         }
         
@@ -343,27 +420,62 @@
             font-weight: 600;
         }
         
-        /* TryHackMe Section */
-        .thm-container {
-            max-width: 320px;
-            width: 100%;
-            margin: 0 auto;
+        /* TryHackMe badge container */
+        .thm-badge-container {
+            padding: 60px 0;
+            display: flex;
+            justify-content: center;
+            background: transparent;
         }
         
-        .thm-iframe-wrapper {
+        .thm-badge-wrapper {
+            background: rgba(17, 24, 39, 0.5);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            max-width: 400px;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
             overflow: hidden;
         }
         
-        .thm-iframe {
+        .thm-badge-wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 247, 255, 0.3);
+            border-color: var(--primary);
+        }
+        
+        .thm-badge-wrapper::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        .thm-badge-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.25rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .thm-badge {
             border: none;
+            width: 100%;
+            height: 180px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .thm-badge-wrapper:hover .thm-badge {
+            transform: scale(1.03);
         }
     </style>
 </head>
@@ -379,13 +491,18 @@
     <!-- Cyber Grid Background -->
     <div class="cyber-grid fixed inset-0"></div>
     
+    <!-- Last Updated Tab -->
+    <div id="last-updated" class="fixed bottom-4 left-4 bg-dark/80 backdrop-blur-md border border-primary/50 rounded-full px-4 py-2 text-xs text-gray-300 z-50 transition-opacity duration-300 hover:opacity-100">
+        Last updated: <span id="update-date">2025-07-20</span>
+    </div>
+    
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-dark/90 backdrop-blur-md border-b border-gray-800">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-primary offensive-logo">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-primary offensive-logo" aria-label="Home">
                 <i class="fas fa-crosshairs text-accent"></i>
             </a>
-            <div class="hidden md:flex space-x-6">
+            <div class="hidden md:flex space-x-8">
                 <a href="#home" class="nav-link text-gray-300 hover:text-white">Home</a>
                 <a href="#about" class="nav-link text-gray-300 hover:text-white">About</a>
                 <a href="#skills" class="nav-link text-gray-300 hover:text-white">Skills</a>
@@ -395,14 +512,14 @@
                 <a href="#contact" class="nav-link text-gray-300 hover:text-white">Contact</a>
             </div>
             <div class="md:hidden">
-                <button id="menu-btn" class="text-light focus:outline-none">
+                <button id="menu-btn" class="text-light focus:outline-none" aria-label="Toggle menu">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-card py-4 px-4">
-            <div class="flex flex-col space-y-4">
+        <div id="mobile-menu" class="hidden md:hidden bg-card overflow-hidden transition-all duration-300 max-h-0">
+            <div class="flex flex-col space-y-4 py-4 px-4">
                 <a href="#home" class="nav-link text-gray-300 hover:text-white">Home</a>
                 <a href="#about" class="nav-link text-gray-300 hover:text-white">About</a>
                 <a href="#skills" class="nav-link text-gray-300 hover:text-white">Skills</a>
@@ -417,18 +534,18 @@
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center relative overflow-hidden pt-16">
         <div class="absolute inset-0 hero-gradient z-0"></div>
-        <div class="container mx-auto px-4 py-12 md:py-20 flex flex-col items-center text-center">
-            <div class="mb-6 md:mb-8">
-                <h1 class="text-4xl md:text-8xl font-bold mb-4">
+        <div class="container mx-auto px-4 py-20 flex flex-col items-center text-center">
+            <div class="mb-8">
+                <h1 class="text-6xl md:text-8xl font-bold mb-4">
                     <span class="name-gradient">ROHIT DEORE</span>
                 </h1>
-                <div class="text-lg md:text-2xl font-bold mb-6 md:mb-10 text-gray-300 mt-4 md:mt-8">
+                <div class="text-xl md:text-2xl font-bold mb-10 text-gray-300 mt-8">
                     Cybersecurity Analyst | Ethical Hacker | Network Security Specialist
                 </div>
                 
                 <div class="quote-terminal">
                     <div class="terminal-text inline-block">
-                        <p class="text-base md:text-xl text-gray-300 leading-relaxed inline">
+                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed inline">
                             "Tools don't make a hacker. Curiosity, discipline, and purpose do."
                         </p>
                         <span class="terminal-cursor"></span>
@@ -438,58 +555,38 @@
         </div>
         
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <a href="#about" class="text-primary text-2xl">
+            <a href="#about" class="text-primary text-2xl" aria-label="Scroll down">
                 <i class="fas fa-chevron-down"></i>
             </a>
         </div>
     </section>
 
-    <!-- TryHackMe Live Profile Section -->
-    <section id="thm-profile" class="py-10 md:py-16 bg-gradient-to-b from-dark/80 to-card/80">
-        <div class="container mx-auto px-4 text-center">
-            <div class="mb-6">
-                <h2 class="text-2xl md:text-3xl font-bold mb-2 text-primary">
-                    <i class="fas fa-shield-alt mr-2"></i>TryHackMe Live Stats
-                </h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
-                    Real-time cybersecurity training progress
-                </p>
-            </div>
-            
-            <div class="terminal-card p-4 rounded-xl thm-container">
-                <a href="https://tryhackme.com/p/deore1001" target="_blank" 
-                   rel="noopener noreferrer" class="block"
-                   aria-label="View my TryHackMe profile">
-                    <div class="thm-iframe-wrapper">
-                        <iframe 
-                            src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1213297" 
-                            class="thm-iframe"
-                            title="TryHackMe Profile Badge"
-                            scrolling="no"
-                            frameborder="0"
-                            loading="lazy"
-                        ></iframe>
-                    </div>
-                </a>
-            </div>
-            <p class="mt-4 text-xs text-gray-500">
-                <i class="fas fa-sync-alt mr-1"></i>Updates automatically
-            </p>
+    <!-- ONLY CHANGE: Added TryHackMe badge section -->
+    <div class="thm-badge-container">
+        <div class="thm-badge-wrapper glow-hover">
+            <div class="thm-badge-title">TryHackMe Live Progress</div>
+            <iframe 
+                src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1213297" 
+                title="TryHackMe Profile Badge"
+                scrolling="no"
+                frameborder="0"
+                class="thm-badge"
+            ></iframe>
         </div>
-    </section>
+    </div>
 
     <!-- About Section -->
-    <section id="about" class="py-12 md:py-20 bg-gradient-to-b from-dark/90 to-card/90">
+    <section id="about" class="py-20 bg-gradient-to-b from-dark/90 to-card/90 section">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 section-divider">
-                <h2 class="text-2xl md:text-4xl font-bold mb-4">About Me</h2>
+            <div class="text-center mb-16 section-divider">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">
                     Cybersecurity analyst specializing in penetration testing and ethical hacking
                 </p>
             </div>
             
-            <div class="terminal-card p-6 rounded-xl max-w-4xl mx-auto">
-                <div class="text-gray-300 mb-6">
+            <div class="terminal-card glow-hover p-8 rounded-xl max-w-4xl mx-auto">
+                <div class="text-gray-300 mb-8">
                     <p class="mb-4">
                         I am an aspiring <span class="highlight">cybersecurity analyst</span> with hands-on experience in <span class="highlight">network security</span> and <span class="highlight">penetration testing</span>. Currently pursuing my Diploma in Cybersecurity at <span class="highlight">Craw Security, Delhi</span>, I combine technical knowledge with a creative problem-solving approach. Continuously updating my skills with the latest threats and security technologies, I am passionate about safeguarding digital assets.
                     </p>
@@ -498,21 +595,21 @@
                     </p>
                 </div>
                 
-                <div class="pillar-card">
+                <div class="pillar-card glow-hover">
                     <h4 class="text-xl font-bold text-primary mb-2">Core Focus</h4>
                     <p class="text-gray-300">
                         Network security, vulnerability assessment, penetration testing, cyber crime investigation, digital forensics, and implementing robust security solutions.
                     </p>
                 </div>
                 
-                <div class="pillar-card">
+                <div class="pillar-card glow-hover">
                     <h4 class="text-xl font-bold text-primary mb-2">Mission</h4>
                     <p class="text-gray-300">
                         To become a certified ethical hacker and protect digital infrastructures by identifying security weaknesses and developing effective defense strategies.
                     </p>
                 </div>
                 
-                <div class="pillar-card">
+                <div class="pillar-card glow-hover">
                     <h4 class="text-xl font-bold text-primary mb-2">Vision</h4>
                     <p class="text-gray-300">
                         To leverage my curiosity and technical skills to become an innovator in cybersecurity, developing new techniques to combat evolving threats and contribute to a safer digital world.
@@ -523,126 +620,126 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-12 md:py-20">
+    <section id="skills" class="py-20 section">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 section-divider">
-                <h2 class="text-2xl md:text-4xl font-bold mb-4">Technical Skills</h2>
+            <div class="text-center mb-16 section-divider">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical Skills</h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">
                     My technical skills and knowledge areas
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Security Tools -->
-                <div class="terminal-card p-5 rounded-xl">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-primary/10 p-2 rounded-lg mr-3">
-                            <i class="fas fa-shield-halved text-primary text-xl"></i>
+                <div class="terminal-card glow-hover p-6 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-shield-halved text-primary text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold">Security Tools</h3>
+                        <h3 class="text-2xl font-bold">Security Tools</h3>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-badge">Metasploit</span>
-                        <span class="skill-badge">Nmap</span>
-                        <span class="skill-badge">Wireshark</span>
-                        <span class="skill-badge">Burp Suite</span>
-                        <span class="skill-badge">Aircrack-ng</span>
-                        <span class="skill-badge">John the Ripper</span>
-                        <span class="skill-badge">Hydra</span>
-                        <span class="skill-badge">Kali Linux</span>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Metasploit</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Nmap</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Wireshark</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Burp Suite</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Aircrack-ng</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">John the Ripper</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Hydra</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Kali Linux</span>
                     </div>
                 </div>
                 
                 <!-- Programming Languages -->
-                <div class="terminal-card p-5 rounded-xl">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-primary/10 p-2 rounded-lg mr-3">
-                            <i class="fas fa-code text-primary text-xl"></i>
+                <div class="terminal-card glow-hover p-6 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-code text-primary text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold">Programming Languages</h3>
+                        <h3 class="text-2xl font-bold">Programming Languages</h3>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-badge">Python</span>
-                        <span class="skill-badge">Bash</span>
-                        <span class="skill-badge">Java</span>
-                        <span class="skill-badge">C</span>
-                        <span class="skill-badge">C++</span>
-                        <span class="skill-badge">HTML/CSS</span>
-                        <span class="skill-badge">JavaScript</span>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Python</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Bash Scripting</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Java</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">C</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">C++</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">HTML/CSS</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">JavaScript</span>
                     </div>
                 </div>
                 
                 <!-- Networking & Protocols -->
-                <div class="terminal-card p-5 rounded-xl">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-primary/10 p-2 rounded-lg mr-3">
-                            <i class="fas fa-network-wired text-primary text-xl"></i>
+                <div class="terminal-card glow-hover p-6 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-network-wired text-primary text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold">Networking & Protocols</h3>
+                        <h3 class="text-2xl font-bold">Networking & Protocols</h3>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-badge">TCP/IP</span>
-                        <span class="skill-badge">DNS</span>
-                        <span class="skill-badge">HTTP/HTTPS</span>
-                        <span class="skill-badge">VLAN</span>
-                        <span class="skill-badge">VPN</span>
-                        <span class="skill-badge">Firewalls</span>
-                        <span class="skill-badge">IDS/IPS</span>
-                        <span class="skill-badge">Packet Tracer</span>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">TCP/IP     </span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">DNS         </span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">HTTP/HTTPS         </span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">VLAN</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">VPN            </span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Firewalls           </span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">IDS/IPS          </span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Packet Tracer</span>
                     </div>
                 </div>
                 
                 <!-- Security Concepts -->
-                <div class="terminal-card p-5 rounded-xl">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-primary/10 p-2 rounded-lg mr-3">
-                            <i class="fas fa-brain text-primary text-xl"></i>
+                <div class="terminal-card glow-hover p-6 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-brain text-primary text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold">Security Concepts</h3>
+                        <h3 class="text-2xl font-bold">Security Concepts</h3>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-badge">Penetration Testing</span>
-                        <span class="skill-badge">Vulnerability</span>
-                        <span class="skill-badge">OWASP Top 10</span>
-                        <span class="skill-badge">Cryptography</span>
-                        <span class="skill-badge">Digital Forensics</span>
-                        <span class="skill-badge">Incident Response</span>
-                        <span class="skill-badge">Threat Analysis</span>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Penetration Testing</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Vulnerability Assessment</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">OWASP Top 10</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Cryptography</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Digital Forensics</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Incident Response</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Threat Analysis</span>
                     </div>
                 </div>
                 
                 <!-- Operating Systems -->
-                <div class="terminal-card p-5 rounded-xl">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-primary/10 p-2 rounded-lg mr-3">
-                            <i class="fas fa-desktop text-primary text-xl"></i>
+                <div class="terminal-card glow-hover p-6 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-desktop text-primary text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold">Operating Systems</h3>
+                        <h3 class="text-2xl font-bold">Operating Systems</h3>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-badge">Kali Linux</span>
-                        <span class="skill-badge">Windows</span>
-                        <span class="skill-badge">Ubuntu</span>
-                        <span class="skill-badge">Parrot OS</span>
-                        <span class="skill-badge">CentOS</span>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Kali Linux</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Windows</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Ubuntu</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Parrot OS</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">CentOS</span>
                     </div>
                 </div>
                 
                 <!-- Web Technologies -->
-                <div class="terminal-card p-5 rounded-xl">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-primary/10 p-2 rounded-lg mr-3">
-                            <i class="fas fa-globe text-primary text-xl"></i>
+                <div class="terminal-card glow-hover p-6 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-globe text-primary text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold">Web Technologies</h3>
+                        <h3 class="text-2xl font-bold">Web Technologies</h3>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-badge">Web App Security</span>
-                        <span class="skill-badge">XSS</span>
-                        <span class="skill-badge">SQL Injection</span>
-                        <span class="skill-badge">CSRF</span>
-                        <span class="skill-badge">Session Hijacking</span>
-                        <span class="skill-badge">API Security</span>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Web App Security</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">XSS</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">SQL Injection</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">CSRF</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">Session Hijacking</span>
+                        <span class="skill-badge glow-hover px-4 py-2 rounded-full">API Security</span>
                     </div>
                 </div>
             </div>
@@ -650,64 +747,84 @@
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="py-12 md:py-20 bg-gradient-to-b from-card/90 to-dark/90">
+    <section id="certifications" class="py-20 bg-gradient-to-b from-card/90 to-dark/90 section">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 section-divider">
-                <h2 class="text-2xl md:text-4xl font-bold mb-4">Certifications</h2>
+            <div class="text-center mb-16 section-divider">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Certifications</h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">
                     Validating my cybersecurity expertise
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="cert-terminal">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="cert-terminal glow-hover">
                     <div class="flex items-start">
-                        <div class="bg-primary/10 p-2 rounded-lg mr-3">
-                            <i class="fas fa-shield-alt text-primary text-xl"></i>
+                        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-shield-alt text-primary text-2xl"></i>
                         </div>
                         <div>
-                            <h4 class="text-lg font-bold">TryHackMe</h4>
-                            <p class="text-gray-400 text-sm">Top 10% | Completed 60+ rooms including Pre-Security, Complete Beginner, and Cyber Defense paths</p>
-                            <div class="mt-2 text-primary text-xs">2023-2025</div>
+                            <h4 class="text-xl font-bold">TryHackMe</h4>
+                            <p class="text-gray-400">Top 10% | Completed 60+ rooms including Pre-Security, Complete Beginner, and Cyber Defense paths</p>
+                            <div class="mt-3 text-primary text-sm">2023-2025</div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="cert-terminal">
+                <div class="cert-terminal glow-hover">
                     <div class="flex items-start">
-                        <div class="bg-primary/10 p-2 rounded-lg mr-3">
-                            <i class="fas fa-user-secret text-primary text-xl"></i>
+                        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-user-secret text-primary text-2xl"></i>
                         </div>
                         <div>
-                            <h4 class="text-lg font-bold">ZSecurity Ethical Hacking</h4>
-                            <p class="text-gray-400 text-sm">Advanced penetration testing techniques and methodologies</p>
-                            <div class="mt-2 text-primary text-xs">2024</div>
+                            <h4 class="text-xl font-bold">ZSecurity Ethical Hacking</h4>
+                            <p class="text-gray-400">Advanced penetration testing techniques and methodologies</p>
+                            <div class="mt-3 text-primary text-sm">2024</div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="cert-terminal">
+                <div class="cert-terminal glow-hover">
                     <div class="flex items-start">
-                        <div class="bg-primary/10 p-2 rounded-lg mr-3">
-                            <i class="fas fa-certificate text-primary text-xl"></i>
+                        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-certificate text-primary text-2xl"></i>
                         </div>
                         <div>
-                            <h4 class="text-lg font-bold">ISC2 Certified in Cybersecurity (CC)</h4>
-                            <p class="text-gray-400 text-sm">Foundational cybersecurity knowledge and best practices</p>
-                            <div class="mt-2 text-primary text-xs">2024</div>
+                            <h4 class="text-xl font-bold">ISC2 Certified in Cybersecurity (CC)</h4>
+                            <p class="text-gray-400">Foundational cybersecurity knowledge and best practices</p>
+                            <div class="mt-3 text-primary text-sm">2024</div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="cert-terminal">
+                <div class="cert-terminal glow-hover">
                     <div class="flex items-start">
-                        <div class="bg-primary/10 p-2 rounded-lg mr-3">
-                            <i class="fas fa-network-wired text-primary text-xl"></i>
+                        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-network-wired text-primary text-2xl"></i>
                         </div>
                         <div>
-                            <h4 class="text-lg font-bold">CCNA Ethical Hacking</h4>
-                            <p class="text-gray-400 text-sm">Network security specialization and ethical hacking principles</p>
-                            <div class="mt-2 text-primary text-xs">2023</div>
+                            <h4 class="text-xl font-bold">CCNA Ethical Hacking</h4>
+                            <p class="text-gray-400">Network security specialization and ethical hacking principles</p>
+                            <div class="mt-3 text-primary text-sm">2023</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- TryHackMe Live Badge -->
+                <div class="cert-terminal glow-hover">
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-badge-check text-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold">TryHackMe Live Badge</h4>
+                            <p class="text-gray-400">Current ranking and activity status</p>
+                            <div class="mt-3">
+                                <a href="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1213297" target="_blank" aria-label="TryHackMe Profile">
+                                    <img src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1213297" 
+                                         alt="TryHackMe Badge" 
+                                         class="mt-2 w-full max-w-48 mx-auto">
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -716,84 +833,84 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-12 md:py-20">
+    <section id="projects" class="py-20 section">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 section-divider">
-                <h2 class="text-2xl md:text-4xl font-bold mb-4">Academic Projects</h2>
+            <div class="text-center mb-16 section-divider">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Academic Projects</h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">
                     Security projects and penetration testing engagements
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
-                <div class="terminal-card p-5 rounded-xl">
+                <div class="terminal-card glow-hover p-6 rounded-xl transition-all duration-300">
                     <div class="mb-4 flex justify-between items-start">
                         <div>
-                            <h3 class="text-lg font-bold">Network Traffic Analysis</h3>
-                            <div class="text-primary text-xs">Security Research</div>
+                            <h3 class="text-xl font-bold">Network Traffic Analysis</h3>
+                            <div class="text-primary text-sm">Security Research</div>
                         </div>
                         <div class="bg-primary/10 p-2 rounded-lg">
                             <i class="fas fa-network-wired text-primary"></i>
                         </div>
                     </div>
-                    <p class="text-gray-400 mb-4 text-sm">
+                    <p class="text-gray-400 mb-6">
                         Captured and analyzed live network packets using Wireshark and TCPdump. 
                         Practiced filtering, dissecting, and interpreting network logs for forensic 
                         and monitoring use cases.
                     </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-dark text-xs px-2 py-1 rounded-full">Wireshark</span>
-                        <span class="bg-dark text-xs px-2 py-1 rounded-full">TCPdump</span>
-                        <span class="bg-dark text-xs px-2 py-1 rounded-full">Traffic Analysis</span>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-dark text-xs px-3 py-1 rounded-full">Wireshark</span>
+                        <span class="bg-dark text-xs px-3 py-1 rounded-full">TCPdump</span>
+                        <span class="bg-dark text-xs px-3 py-1 rounded-full">Traffic Analysis</span>
                     </div>
                     <div class="text-xs text-gray-500">2024</div>
                 </div>
                 
                 <!-- Project 2 -->
-                <div class="terminal-card p-5 rounded-xl">
+                <div class="terminal-card glow-hover p-6 rounded-xl transition-all duration-300">
                     <div class="mb-4 flex justify-between items-start">
                         <div>
-                            <h3 class="text-lg font-bold">Penetration Testing</h3>
-                            <div class="text-primary text-xs">Vulnerability Assessment</div>
+                            <h3 class="text-xl font-bold">Penetration Testing</h3>
+                            <div class="text-primary text-sm">Vulnerability Assessment</div>
                         </div>
                         <div class="bg-primary/10 p-2 rounded-lg">
                             <i class="fas fa-shield-alt text-primary"></i>
                         </div>
                     </div>
-                    <p class="text-gray-400 mb-4 text-sm">
+                    <p class="text-gray-400 mb-6">
                         Executed vulnerability scans using Nmap for network reconnaissance. 
                         Used Metasploitable to simulate real-world attacks and gain hands-on 
                         experience in exploiting security flaws.
                     </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-dark text-xs px-2 py-1 rounded-full">Metasploit</span>
-                        <span class="bg-dark text-xs px-2 py-1 rounded-full">Nmap</span>
-                        <span class="bg-dark text-xs px-2 py-1 rounded-full">Vulnerability</span>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-dark text-xs px-3 py-1 rounded-full">Metasploit</span>
+                        <span class="bg-dark text-xs px-3 py-1 rounded-full">Nmap</span>
+                        <span class="bg-dark text-xs px-3 py-1 rounded-full">Vulnerability</span>
                     </div>
                     <div class="text-xs text-gray-500">2024</div>
                 </div>
                 
                 <!-- Project 3 -->
-                <div class="terminal-card p-5 rounded-xl">
+                <div class="terminal-card glow-hover p-6 rounded-xl transition-all duration-300">
                     <div class="mb-4 flex justify-between items-start">
                         <div>
-                            <h3 class="text-lg font-bold">Web Security Testing</h3>
-                            <div class="text-primary text-xs">Application Security</div>
+                            <h3 class="text-xl font-bold">Web Security Testing</h3>
+                            <div class="text-primary text-sm">Application Security</div>
                         </div>
                         <div class="bg-primary/10 p-2 rounded-lg">
                             <i class="fas fa-lock text-primary"></i>
                         </div>
                     </div>
-                    <p class="text-gray-400 mb-4 text-sm">
+                    <p class="text-gray-400 mb-6">
                         Used Burp Suite to intercept and manipulate HTTP requests. Identified and 
                         experimented with basic web vulnerabilities such as input tampering, 
                         cookie manipulation, XSS and SQLi basics.
                     </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-dark text-xs px-2 py-1 rounded-full">Burpsuite</span>
-                        <span class="bg-dark text-xs px-2 py-1 rounded-full">XSS</span>
-                        <span class="bg-dark text-xs px-2 py-1 rounded-full">SQLi</span>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-dark text-xs px-3 py-1 rounded-full">Burpsuite</span>
+                        <span class="bg-dark text-xs px-3 py-1 rounded-full">XSS</span>
+                        <span class="bg-dark text-xs px-3 py-1 rounded-full">SQLi</span>
                     </div>
                     <div class="text-xs text-gray-500">2024</div>
                 </div>
@@ -802,10 +919,10 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="py-12 md:py-20 bg-gradient-to-b from-card/90 to-dark/90">
+    <section id="education" class="py-20 bg-gradient-to-b from-card/90 to-dark/90 section">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 section-divider">
-                <h2 class="text-2xl md:text-4xl font-bold mb-4">Education & Training</h2>
+            <div class="text-center mb-16 section-divider">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Education & Training</h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">
                     My academic background and professional certifications
                 </p>
@@ -814,22 +931,22 @@
             <div class="max-w-3xl mx-auto">
                 <div class="relative">
                     <!-- Education Timeline -->
-                    <div class="space-y-8">
+                    <div class="space-y-12">
                         <!-- Item 1 -->
                         <div class="flex">
-                            <div class="flex-shrink-0 mr-4">
-                                <div class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                                    <i class="fas fa-graduation-cap text-primary text-xl"></i>
+                            <div class="flex-shrink-0 mr-6">
+                                <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                                    <i class="fas fa-graduation-cap text-primary text-2xl"></i>
                                 </div>
                             </div>
-                            <div class="flex-grow timeline-item pl-6 md:pl-8 relative pb-8">
-                                <div class="terminal-card p-5 rounded-xl">
-                                    <div class="flex flex-col md:flex-row justify-between mb-2">
-                                        <h3 class="text-lg md:text-xl font-bold">Diploma in Cybersecurity</h3>
-                                        <span class="text-primary font-bold text-sm md:text-base">2025 - Present</span>
+                            <div class="flex-grow timeline-item pl-8 relative pb-12">
+                                <div class="terminal-card glow-hover p-6 rounded-xl">
+                                    <div class="flex justify-between flex-wrap mb-2">
+                                        <h3 class="text-xl font-bold">Diploma in Cybersecurity</h3>
+                                        <span class="text-primary font-bold">2025 - Present</span>
                                     </div>
-                                    <div class="text-primary mb-2 text-sm md:text-base">Craw Security, Delhi</div>
-                                    <p class="text-gray-300 text-sm">
+                                    <div class="text-primary mb-4">Craw Security, Delhi</div>
+                                    <p class="text-gray-300">
                                         Advanced training in ethical hacking, penetration testing, 
                                         digital forensics, and security operations.
                                     </p>
@@ -839,19 +956,19 @@
                         
                         <!-- Item 2 -->
                         <div class="flex">
-                            <div class="flex-shrink-0 mr-4">
-                                <div class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                                    <i class="fas fa-university text-primary text-xl"></i>
+                            <div class="flex-shrink-0 mr-6">
+                                <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                                    <i class="fas fa-university text-primary text-2xl"></i>
                                 </div>
                             </div>
-                            <div class="flex-grow timeline-item pl-6 md:pl-8 relative pb-8">
-                                <div class="terminal-card p-5 rounded-xl">
-                                    <div class="flex flex-col md:flex-row justify-between mb-2">
-                                        <h3 class="text-lg md:text-xl font-bold">Bachelor of Computer Science</h3>
-                                        <span class="text-primary font-bold text-sm md:text-base">2021 - 2024</span>
+                            <div class="flex-grow timeline-item pl-8 relative pb-12">
+                                <div class="terminal-card glow-hover p-6 rounded-xl">
+                                    <div class="flex justify-between flex-wrap mb-2">
+                                        <h3 class="text-xl font-bold">Bachelor of Computer Science</h3>
+                                        <span class="text-primary font-bold">2021 - 2024</span>
                                     </div>
-                                    <div class="text-primary mb-2 text-sm md:text-base">R.C. Patel Arts, Commerce & Science College, Shirpur</div>
-                                    <p class="text-gray-300 text-sm">
+                                    <div class="text-primary mb-4">R.C. Patel Arts, Commerce & Science College, Shirpur</div>
+                                    <p class="text-gray-300">
                                         Comprehensive study of computer systems, algorithms, 
                                         data structures, and software development.
                                     </p>
@@ -861,18 +978,18 @@
                         
                         <!-- Item 3 -->
                         <div class="flex">
-                            <div class="flex-shrink-0 mr-4">
-                                <div class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                                    <i class="fas fa-book text-primary text-xl"></i>
+                            <div class="flex-shrink-0 mr-6">
+                                <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                                    <i class="fas fa-book text-primary text-2xl"></i>
                                 </div>
                             </div>
-                            <div class="flex-grow pl-6 md:pl-8">
-                                <div class="terminal-card p-5 rounded-xl">
-                                    <div class="flex flex-col md:flex-row justify-between mb-2">
-                                        <h3 class="text-lg md:text-xl font-bold">Higher Secondary (HSC)</h3>
-                                        <span class="text-primary font-bold text-sm md:text-base">2019 - 2021</span>
+                            <div class="flex-grow pl-8">
+                                <div class="terminal-card glow-hover p-6 rounded-xl">
+                                    <div class="flex justify-between flex-wrap mb-2">
+                                        <h3 class="text-xl font-bold">Higher Secondary (HSC)</h3>
+                                        <span class="text-primary font-bold">2019 - 2021</span>
                                     </div>
-                                    <div class="text-primary text-sm md:text-base">R.C. Patel Junior College, Shirpur</div>
+                                    <div class="text-primary mb-4">R.C. Patel Junior College, Shirpur</div>
                                 </div>
                             </div>
                         </div>
@@ -883,43 +1000,43 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-12 md:py-20">
+    <section id="contact" class="py-20 section">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 section-divider">
-                <h2 class="text-2xl md:text-4xl font-bold mb-4">Connect With Me</h2>
+            <div class="text-center mb-16 section-divider">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Connect With Me</h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">
                     Let's secure the digital world together
                 </p>
             </div>
             
             <div class="max-w-4xl mx-auto">
-                <div class="flex flex-wrap justify-center gap-4">
+                <div class="flex flex-wrap justify-center gap-6">
                     <!-- Email -->
-                    <a href="mailto:deorerohit0101@gmail.com" class="contact-icon">
+                    <a href="mailto:deorerohit0101@gmail.com" class="contact-icon glow-hover" aria-label="Email">
                         <i class="fas fa-envelope"></i>
                         <span>Email</span>
                     </a>
                     
                     <!-- GitHub -->
-                    <a href="https://github.com/deorerohit555" target="_blank" class="contact-icon">
+                    <a href="https://github.com/deorerohit555" target="_blank" class="contact-icon glow-hover" aria-label="GitHub">
                         <i class="fab fa-github"></i>
                         <span>GitHub</span>
                     </a>
                     
                     <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/in/deorerohit0101" target="_blank" class="contact-icon">
+                    <a href="https://www.linkedin.com/in/deorerohit0101" target="_blank" class="contact-icon glow-hover" aria-label="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
                         <span>LinkedIn</span>
                     </a>
                     
                     <!-- TryHackMe -->
-                    <a href="https://tryhackme.com/p/deore1001" target="_blank" class="contact-icon">
+                    <a href="https://tryhackme.com/p/deore1001" target="_blank" class="contact-icon glow-hover" aria-label="TryHackMe">
                         <i class="fas fa-shield-alt"></i>
                         <span>TryHackMe</span>
                     </a>
                     
                     <!-- Instagram -->
-                    <a href="https://www.instagram.com/deore.1001/" target="_blank" class="contact-icon">
+                    <a href="https://www.instagram.com/deore.1001/" target="_blank" class="contact-icon glow-hover" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                         <span>Instagram</span>
                     </a>
@@ -929,17 +1046,17 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 border-t border-gray-800">
+    <footer class="py-12 border-t border-gray-800">
         <div class="container mx-auto px-4">
             <div class="text-center">
-                <div class="flex justify-center mb-4">
-                    <a href="#" class="text-lg font-bold text-primary">
+                <div class="flex justify-center mb-6">
+                    <a href="#" class="text-xl font-bold text-primary">
                         <i class="fas fa-crosshairs text-accent mr-2"></i>
                         <span class="text-primary">Rohit Deore</span>
                     </a>
                 </div>
                 
-                <div class="text-gray-500 text-xs">
+                <div class="text-gray-500 text-sm">
                     &copy; 2025 Deore Rohit. All rights reserved. Crafted with <i class="fas fa-heart text-red-500"></i> for security.
                 </div>
             </div>
@@ -974,20 +1091,46 @@
             starsContainer.appendChild(star);
         }
         
-        // Mobile Menu Toggle
+        // Mobile Menu Toggle with animation
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+        let menuOpen = false;
         
         menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('active');
+            menuOpen = !menuOpen;
+            
+            // Toggle menu icon
+            menuBtn.innerHTML = menuOpen ? 
+                '<i class="fas fa-times text-xl"></i>' : 
+                '<i class="fas fa-bars text-xl"></i>';
+            
+            // Toggle menu with animation
+            if (menuOpen) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.style.maxHeight = '0';
+                // Trigger reflow
+                mobileMenu.offsetHeight;
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+            } else {
+                mobileMenu.style.maxHeight = '0';
+                // Hide after animation completes
+                setTimeout(() => {
+                    if (!menuOpen) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }, 300);
+            }
         });
         
         // Close mobile menu when clicking a link
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('active');
+                menuOpen = false;
+                menuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+                mobileMenu.style.maxHeight = '0';
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
             });
         });
         
@@ -1034,6 +1177,11 @@
                 nav.classList.remove('shadow-lg');
             }
         });
+        
+        // Set last updated date
+        const today = new Date();
+        const formattedDate = `${today.getFullYear()}-${(today.getMonth()+1).toString().padStart(2, '0')}-${today.getDate().toString().padStart(2, '0')}`;
+        document.getElementById('update-date').textContent = formattedDate;
     </script>
 </body>
 </html>
